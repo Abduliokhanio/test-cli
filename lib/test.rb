@@ -12,37 +12,42 @@ require 'pry'
 def welcome
     puts "Hi! Welcome to the Steam Clearance CLI!"
     puts "Please select the genre you would like to explore:"
+    puts "1 : General"
+    puts "2 : Casual"
+    puts "3 : Simulation"
+    puts "4 : Indie"
+    puts "5 : Adventure"
+    puts "6 : Action"
 end
 
 def logic
-  input = gets.chomp
   boogie_woogie = true
 
-  while input != 'q'
-    if input == 0
-      puts top_10_general
-      input = gets.chomp
-    elsif input == 1
+  while boogie_woogie == true
+    input = gets.chomp
+
+    if input == '1'
+      top_10_general
+    elsif input == '2'
       top_10_casual
-      input = gets.chomp
+    elsif input == '3'
+      top_10_simulation
+    elsif input == '4'
+      top_10_indie
+    elsif input == '5'
+      top_10_adventure
+    elsif input == '6'
+      top_10_action
     elsif input == "q"
       puts "Bye for now!"
-      break
+      boogie_woogie = false
+    else
+      puts "That's not an option."
+      welcome
     end
+
   end
 
-end
-
-def selection
-  puts welcome
-  puts "1 : General"
-  puts "2 : Casual"
-  puts "3 : Simulation"
-  puts "4 : Indie"
-  puts "5 : Adventure"
-  puts "6 : Action"
-
-  logic
 end
 
 
