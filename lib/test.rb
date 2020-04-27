@@ -14,6 +14,25 @@ def welcome
     puts "Please select the genre you would like to explore:"
 end
 
+def logic
+  input = gets.chomp
+  boogie_woogie = true
+
+  while input != 'q'
+    if input == 0
+      puts top_10_general
+      input = gets.chomp
+    elsif input == 1
+      top_10_casual
+      input = gets.chomp
+    elsif input == "q"
+      puts "Bye for now!"
+      break
+    end
+  end
+
+end
+
 def selection
   puts welcome
   puts "1 : General"
@@ -22,6 +41,8 @@ def selection
   puts "4 : Indie"
   puts "5 : Adventure"
   puts "6 : Action"
+
+  logic
 end
 
 
@@ -158,6 +179,4 @@ def top_10_action
   end
 end
 
-
-selection
-top_10_indie
+logic
