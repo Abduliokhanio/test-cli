@@ -20,6 +20,16 @@ def welcome
     puts "6 : Action"
 end
 
+def selection
+  puts "Please select the genre you would like to explore:"
+  puts "1 : General"
+  puts "2 : Casual"
+  puts "3 : Simulation"
+  puts "4 : Indie"
+  puts "5 : Adventure"
+  puts "6 : Action"
+end
+
 def logic
   boogie_woogie = true
 
@@ -43,7 +53,7 @@ def logic
       boogie_woogie = false
     else
       puts "That's not an option."
-      welcome
+      selection
     end
 
   end
