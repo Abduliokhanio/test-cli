@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'httparty'
+#require 'httparty'
 require 'pry'
 
   #doc.css("div.responsive_search_name_combined")[0].text.split                       # array
