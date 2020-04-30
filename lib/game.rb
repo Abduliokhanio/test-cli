@@ -15,10 +15,6 @@ class Game
     @@all << self
   end
 
-  def title
-    @title = title
-  end
-
 end
 
-kh = Game.new
+kh = Game.new("kh", 20, 10, 18)
