@@ -8,6 +8,7 @@ class Scraper
   attr_accessor :doc, :title, :original_price, :percent_off, :discounted_price
 
   @@all = {}
+
   def initialize(url)
     html = open(url)
     @doc = Nokogiri::HTML(open(html))
@@ -22,14 +23,9 @@ class Scraper
       discounted_price = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-1].split("$")[2]
       percent_off = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-2]
 
-
       @@all[epoc +1] = [title,origional_price,discounted_price,percent_off]
       epoc += 1
     end
-  end
-
-  def save
-    @@all << self
   end
 
   def all
@@ -39,7 +35,12 @@ class Scraper
 end
 
 general_url = "https://store.steampowered.com/search/?specials=1"
+casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
+simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
+indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
+adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
+action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
-genral = Scraper.new(general_url)
+genral = Scraper.new(casual_url)
 genral.collecter
 genral.all
