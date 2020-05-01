@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 #require 'httparty'
 require 'pry'
+require_relative "game.rb"
 
 class Scraper
 
@@ -29,7 +30,15 @@ class Scraper
   end
 
   def creator # creates games
-   puts @@all[0][0]
+   epoc = 0
+   while epoc < 10
+       title1 = @@all[epoc][0]
+       origional_price1 = @@all[epoc][1]
+       discounted_price1 = @@all[epoc][2]
+       percent_off1 = @@all[epoc][3]
+       Game.new(title1, origional_price1, percent_off1, discounted_price1)
+     epoc += 1
+   end
   end
 
   def all
@@ -48,5 +57,5 @@ action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 genral = Scraper.new(general_url)
 genral.collecter
 #genral.all
-
 genral.creator
+puts Game.all[0].original_price

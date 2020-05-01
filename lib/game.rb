@@ -1,12 +1,11 @@
-require_relative "scraper.rb"
-
 class Game
 
   attr_accessor :title, :original_price, :percent_off, :discounted_price
 
   @@all = []
-
+  @@count = 0
   def initialize(title, original_price, percent_off, discounted_price)
+
     @title = title
     @original_price = original_price
     @percent_off = percent_off
@@ -15,6 +14,10 @@ class Game
     @@all << self
   end
 
+  def self.all
+    @@all
+  end
+
 end
 
-kh = Game.new("kh", 20, 10, 18)
+Game.all
