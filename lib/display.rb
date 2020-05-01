@@ -26,17 +26,17 @@ class Display
       input = gets.chomp
 
       if input == '1'
-
+        self.output1(input)
       elsif input == '2'
-
+        self.output1(input)
       elsif input == '3'
-
+        self.output1(input)
       elsif input == '4'
-
+        self.output1(input)
       elsif input == '5'
-
+        self.output1(input)
       elsif input == '6'
-
+        self.output1(input)
       elsif input == "q"
         puts "Bye for now!"
         boogie_woogie = false
@@ -46,13 +46,29 @@ class Display
       end
 
     end
-
-
-
   end
 
+  def output1(val)
+    if val == '1'
+      sit = 'Genral'
+    elsif val == '2'
+      sit = 'Casual'
+    elsif val == '3'
+      sit = 'Simulation'
+    elsif val == '4'
+      sit = 'Indie'
+    elsif val == '5'
+      sit = 'Adventure'
+    elsif val == '6'
+      sit = 'Action'
+    end
 
-  def output
+
+    puts ''
+    puts "                              Top 10 #{sit}"
+    puts ''
+    puts "Count  |  Title  |  Original Price  |  Percent off  |  Discounted Price"
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
   end
 
 end
