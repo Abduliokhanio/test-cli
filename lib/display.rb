@@ -69,6 +69,18 @@ class Display
     puts ''
     puts "Count  |  Title  |  Original Price  |  Percent off  |  Discounted Price"
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    epoc = 0
+    while epoc < 10
+
+      title =  Game.all[epoc].title
+      original_price = Game.all[epoc].original_price
+      percent_off = Game.all[epoc].percent_off
+      discounted_price = Game.all[epoc].discounted_price
+
+      puts "#{epoc + 1}  |  Title: #{title}  | Original Price: $#{original_price}  | Percent off: #{percent_off}  | Discounted Price: $#{discounted_price}"
+      puts ""
+      epoc += 1
+    end
   end
 
 end
