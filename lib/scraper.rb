@@ -14,7 +14,7 @@ class Scraper
     @doc = Nokogiri::HTML(open(html))
   end
 
-  def collecter
+  def collecter # collects games + data
 
     epoc = 0
     while epoc < 10
@@ -23,9 +23,13 @@ class Scraper
       discounted_price = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-1].split("$")[2]
       percent_off = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-2]
 
-      @@all[epoc +1] = [title,origional_price,discounted_price,percent_off]
+      @@all[epoc ] = [title,origional_price,discounted_price,percent_off]
       epoc += 1
     end
+  end
+
+  def creator # creates games
+   puts @@all[0][0]
   end
 
   def all
@@ -41,6 +45,8 @@ indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
 adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
 action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
-genral = Scraper.new(casual_url)
+genral = Scraper.new(general_url)
 genral.collecter
-genral.all
+#genral.all
+
+genral.creator
