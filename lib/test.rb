@@ -8,6 +8,7 @@ require 'pry'
   #doc.css("div.responsive_search_name_combined")[0].text.split[-1].split("$")[1]     # origional price
   #doc.css("div.responsive_search_name_combined")[0].text.split[-1].split("$")[2]     # discounted price
   #doc.css("div.responsive_search_name_combined")[0].text.split[-2]                   # Percent off
+  #@doc.css("a.search_result_row")[0]["href"]                                         # getting the link
 
 def welcome
     puts "Hi! Welcome to the Steam Clearance CLI!"

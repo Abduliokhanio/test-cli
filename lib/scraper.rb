@@ -6,7 +6,7 @@ require_relative "game.rb"
 
 class Scraper
 
-  attr_accessor :doc, :title, :original_price, :percent_off, :discounted_price
+  attr_accessor :doc,:doc2_deep_info, :title, :original_price, :percent_off, :discounted_price
 
   @@all = {}
 
@@ -46,6 +46,20 @@ class Scraper
     puts @@all
   end
 
+  def description
+    new_url = @doc.css("a.search_result_row")[0]["href"] # getting the link
+    html = open(new_url)
+    @doc2_deep_info = Nokogiri::HTML(open(html))
+    snip_bit = @doc2_deep_info.css("div.game_description_snippet").text.strip #snip_bit
+    game_review = @doc2_deep_info.css("span.game_review_summary")[0].text #game review
+    developer = @doc2_deep_info.css("div.dev_row")[0].text.strip.split(',')[0].split[1] #dev team
+
+
+    puts snip_bit
+    puts game_review
+    puts developer
+  end
+
 end
 
 general_url = "https://store.steampowered.com/search/?specials=1"
@@ -56,6 +70,10 @@ adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
 action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
 genral = Scraper.new(general_url)
-#genral.collecter
+genral.collecter
 
-Game.all
+genral.description
+
+# Game.all.each do |val|
+#   puts val.title
+# end
