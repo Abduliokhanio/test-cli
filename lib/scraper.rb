@@ -53,11 +53,16 @@ class Scraper
     snip_bit = @doc2_deep_info.css("div.game_description_snippet").text.strip #snip_bit
     game_review = @doc2_deep_info.css("span.game_review_summary")[0].text #game review
     developer = @doc2_deep_info.css("div.dev_row")[0].text.strip.split(',')[0].split[1] #dev team
+    des = @doc2_deep_info.css("div.game_area_description").text #game discription
+    min_req = @doc2_deep_info.css("div.game_area_sys_req_leftCol").text.strip #minimum Req
+    rec_req = @doc2_deep_info.css("div.game_area_sys_req_rightCol").text.strip #reccomended Req
 
-
-    puts snip_bit
-    puts game_review
-    puts developer
+    #puts snip_bit
+    #puts game_review
+    #puts developer
+    #puts des
+    puts min_req
+    puts rec_req
   end
 
 end
