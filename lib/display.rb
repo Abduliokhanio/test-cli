@@ -86,7 +86,7 @@ class Display
     puts ''
     puts "                              Top 10 #{sit}"
     puts ''
-    puts "Count  |  Title  |  Original Price  |  Percent off  |  Discounted Price"
+    puts "Rank  |  Title  |  Original Price  |  Percent off  |  Discounted Price"
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 
