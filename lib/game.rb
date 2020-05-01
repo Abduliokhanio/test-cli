@@ -18,5 +18,8 @@ class Game
     @@all
   end
 
-end
+  def self.destroy
+    @@all = []
+  end
 
+end
