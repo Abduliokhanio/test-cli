@@ -2,6 +2,13 @@ require_relative "scraper.rb"
 
 class Display
 
+  @@general_url = "https://store.steampowered.com/search/?specials=1"
+  @@casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
+  @@simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
+  @@indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
+  @@adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
+  @@action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
+
   def initialize
   end
 
@@ -27,16 +34,28 @@ class Display
 
       if input == '1'
         self.output1(input)
+        genral
+        loopy
       elsif input == '2'
         self.output1(input)
+        casual
+        loopy
       elsif input == '3'
         self.output1(input)
+        simulation
+        loopy
       elsif input == '4'
         self.output1(input)
+        indie
+        loopy
       elsif input == '5'
         self.output1(input)
+        adventure
+        loopy
       elsif input == '6'
         self.output1(input)
+        action
+        loopy
       elsif input == "q"
         puts "Bye for now!"
         boogie_woogie = false
@@ -70,7 +89,7 @@ class Display
     puts "Count  |  Title  |  Original Price  |  Percent off  |  Discounted Price"
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-    loopy
+
   end
 
   def loopy
@@ -86,6 +105,37 @@ class Display
       puts ""
       epoc += 1
     end
+    Game.destroy
+  end
+
+  def genral
+    genral = Scraper.new(@@general_url)
+    genral.collecter
+  end
+
+  def casual
+    casual = Scraper.new(@@casual_url)
+    casual.collecter
+  end
+
+  def simulation
+    simulation = Scraper.new(@@simulation_url)
+    simulation.collecter
+  end
+
+  def indie
+    indie = Scraper.new(@@indie_url)
+    indie.collecter
+  end
+
+  def adventure
+    adventure = Scraper.new(@@adventure_url)
+    adventure.collecter
+  end
+
+  def action
+    action = Scraper.new(@@action_url)
+    action.collecter
   end
 
 end

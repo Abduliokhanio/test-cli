@@ -27,6 +27,7 @@ class Scraper
       @@all[epoc ] = [title,origional_price,discounted_price,percent_off]
       epoc += 1
     end
+    creator
   end
 
   def creator # creates games
@@ -55,7 +56,6 @@ adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
 action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
 genral = Scraper.new(general_url)
-genral.collecter
-genral.creator
+#genral.collecter
 
 Game.all
