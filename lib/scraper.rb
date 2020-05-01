@@ -56,6 +56,6 @@ action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
 genral = Scraper.new(general_url)
 genral.collecter
-#genral.all
 genral.creator
-puts Game.all[0].original_price
+
+Game.all

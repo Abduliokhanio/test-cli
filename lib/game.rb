@@ -20,4 +20,3 @@ class Game
 
 end
 
-Game.all
