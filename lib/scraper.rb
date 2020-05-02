@@ -24,13 +24,13 @@ class Scraper
       discounted_price = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-1].split("$")[2]
       percent_off = @doc.css("div.responsive_search_name_combined")[epoc].text.split[-2]
       deep_dive_scraper(epoc)
-      snip_bit = @doc2_deep_info.css("div.game_description_snippet").text.strip #snip_bit
+      snip_bit = @doc2_deep_info.css("div.game_description_snippet").text.split.join(' ') #snip_bit
       game_review = @doc2_deep_info.css("span.game_review_summary")[0].text rescue "Review Not Listed" #game review
       #binding.pry
       developer = @doc2_deep_info.css("div.dev_row")[0].text.strip.split(',')[0].split[1] rescue "Developer Not Listed"#dev team
       des = @doc2_deep_info.css("div.game_area_description").text.split.join(' ') #game discription
-      min_req = @doc2_deep_info.css("div.game_area_sys_req_leftCol").text.strip #minimum Req
-      rec_req = @doc2_deep_info.css("div.game_area_sys_req_rightCol").text.strip #reccomended Req
+      min_req = @doc2_deep_info.css("div.game_area_sys_req_leftCol").text.split.join(' ') #minimum Req
+      rec_req = @doc2_deep_info.css("div.game_area_sys_req_rightCol").text.split.join(' ') #reccomended Req
 
       @@all[epoc] = [title,origional_price,discounted_price,percent_off,snip_bit,game_review,developer,des,min_req,rec_req]
       epoc += 1
@@ -90,15 +90,15 @@ class Scraper
 
 end
 
-general_url = "https://store.steampowered.com/search/?specials=1"
-casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
-simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
-indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
-adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
-action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
+# general_url = "https://store.steampowered.com/search/?specials=1"
+# casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
+# simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
+# indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
+# adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
+# action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
-genral = Scraper.new(general_url)
-genral.collecter
+# genral = Scraper.new(general_url)
+# genral.collecter
 #genral.all
 
 # Game.all.each do |val|

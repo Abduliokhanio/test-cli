@@ -29,6 +29,10 @@ class Display
     puts ''
   end
 
+  def selection2
+    puts "What would you like more information about?"
+  end
+
   def logic
     boogie_woogie = true
 
@@ -81,31 +85,61 @@ class Display
   def description
     boogie_woogie = true
 
-    puts "What would you like more information about?"
+    selection2
 
     while boogie_woogie == true
       input = gets.chomp
 
       if input == '1'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '2'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '3'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '4'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '5'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '6'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '7'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '8'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '9'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == '10'
         more_info(input.to_i - 1)
+        puts''
+        loopy
+
       elsif input == "q"
         puts ""
         puts "Bye for now!"
@@ -146,7 +180,11 @@ class Display
   end
 
   def more_info(num)
+    puts ""
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     puts "#{Game.all[num].title}"
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     puts '                              Snip Bit'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts Game.all[num].snip_bit
@@ -167,6 +205,11 @@ class Display
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts Game.all[num].rec_req
     puts ''
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    puts ''
+    selection2
+
   end
 
   def loopy
