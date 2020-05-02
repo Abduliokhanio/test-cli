@@ -41,22 +41,27 @@ class Display
         self.output1(input)
         casual
         loopy
+        description
       elsif input == '3'
         self.output1(input)
         simulation
         loopy
+        description
       elsif input == '4'
         self.output1(input)
         indie
         loopy
+        description
       elsif input == '5'
         self.output1(input)
         adventure
         loopy
+        description
       elsif input == '6'
         self.output1(input)
         action
         loopy
+        description
       elsif input == "q"
         puts "Bye for now!"
         boogie_woogie = false
@@ -77,20 +82,29 @@ class Display
       input = gets.chomp
 
       if input == '1'
-        more_info
+        more_info(input.to_i - 1)
       elsif input == '2'
-        puts "info about #{input}"
+        more_info(input.to_i - 1)
       elsif input == '3'
-        puts "info about #{input}"
+        more_info(input.to_i - 1)
       elsif input == '4'
-        puts "info about #{input}"
+        more_info(input.to_i - 1)
       elsif input == '5'
-        puts "info about #{input}"
+        more_info(input.to_i - 1)
       elsif input == '6'
-        puts "info about #{input}"
+        more_info(input.to_i - 1)
+      elsif input == '7'
+        more_info(input.to_i - 1)
+      elsif input == '8'
+        more_info(input.to_i - 1)
+      elsif input == '9'
+        more_info(input.to_i - 1)
+      elsif input == '10'
+        more_info(input.to_i - 1)
       elsif input == "q"
         puts "Bye for now!"
         boogie_woogie = false
+        Game.destroy
         selection
       else
         puts "That's not an option."
@@ -124,7 +138,7 @@ class Display
 
   end
 
-  def self.more_info(num)
+  def more_info(num)
     puts '                              Snip Bit'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts Game.all[num].snip_bit
@@ -160,7 +174,6 @@ class Display
       puts ""
       epoc += 1
     end
-    Game.destroy
   end
 
   def genral
@@ -199,5 +212,5 @@ end
 uno = Display.new
 uno.welcome
 uno.selection
-#uno.logic
-Display.more_info(0)
+uno.logic
+#Display.more_info(0)
