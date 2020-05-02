@@ -124,26 +124,26 @@ class Display
 
   end
 
-  def self.more_info
+  def self.more_info(num)
     puts '                              Snip Bit'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    puts Game.all[0].snip_bit
+    puts Game.all[num].snip_bit
     puts ''
     puts '                              Game Review'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    puts Game.all[0].game_review
+    puts Game.all[num].game_review
     puts ''
     puts '                              Description'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    puts Game.all[0].des
+    puts Game.all[num].des
     puts ''
     puts '                              Minimum Requirement'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    puts Game.all[0].min_req
+    puts Game.all[num].min_req
     puts ''
     puts '                              Reccomended Requirement'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    puts Game.all[0].rec_req
+    puts Game.all[num].rec_req
     puts ''
   end
 
@@ -200,4 +200,4 @@ uno = Display.new
 uno.welcome
 uno.selection
 #uno.logic
-Display.more_info
+Display.more_info(0)
