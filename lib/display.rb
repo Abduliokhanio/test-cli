@@ -290,11 +290,3 @@ class Display
 end
 
 Display.run
-
-
-# uno = Display.new
-# uno.welcome
-# uno.selection
-# uno.logic rescue puts "Sorry, client server did not accept request. Please try again."
-#Display.more_info(0)
-

@@ -1,7 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-#require 'httparty'
-require 'pry'
 require_relative "game.rb"
 
 class Scraper
@@ -72,20 +70,3 @@ class Scraper
   end
 
 end
-
-# general_url = "https://store.steampowered.com/search/?specials=1"
-# casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
-# simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
-# indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
-# adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
-# action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
-
-# genral = Scraper.new(general_url)
-# genral.collecter
-#genral.all
-
-# Game.all.each do |val|
-#   puts val.title
-#   puts val.rec_req
-#   puts ''
-# end

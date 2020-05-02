@@ -1,0 +1,20 @@
+# general_url = "https://store.steampowered.com/search/?specials=1"
+# casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
+# simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
+# indie_url = "https://store.steampowered.com/search/?specials=1&tags=492"
+# adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
+# action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
+
+Project BluePrint
+    1) Ask for user input for genre?
+    2) Display Top 10 games in that genre.
+    3) Ask user if he wants more information on a particular game?
+    4) Display aditional information
+    5) Ask user if he wants more information on a particular game?/ Give him option to go back to genre selection.
+        5A) If user wants info on another game
+            4 -> 5
+        5B)If user wants info on another genre
+            1 -> 5
+
+Project Back-End
+
