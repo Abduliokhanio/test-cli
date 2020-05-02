@@ -277,10 +277,15 @@ class Display
   def self.run
     welcome
     selection
-    logic rescue puts "Sorry, client server did not accept request. Please try again."
-
+    logic rescue connection_fail
   end 
 
+  def self.connection_fail
+    puts ''
+    puts "Sorry, steam server did not accept the request. Please try again."
+    puts ''
+    run
+  end 
 
 end
 
