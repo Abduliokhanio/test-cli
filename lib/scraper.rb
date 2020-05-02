@@ -28,7 +28,7 @@ class Scraper
       game_review = @doc2_deep_info.css("span.game_review_summary")[0].text rescue "Review Not Listed" #game review
       #binding.pry
       developer = @doc2_deep_info.css("div.dev_row")[0].text.strip.split(',')[0].split[1] rescue "Developer Not Listed"#dev team
-      des = @doc2_deep_info.css("div.game_area_description").text #game discription
+      des = @doc2_deep_info.css("div.game_area_description").text.split.join(' ') #game discription
       min_req = @doc2_deep_info.css("div.game_area_sys_req_leftCol").text.strip #minimum Req
       rec_req = @doc2_deep_info.css("div.game_area_sys_req_rightCol").text.strip #reccomended Req
 

@@ -146,6 +146,7 @@ class Display
   end
 
   def more_info(num)
+    puts "#{Game.all[num].title}"
     puts '                              Snip Bit'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts Game.all[num].snip_bit
