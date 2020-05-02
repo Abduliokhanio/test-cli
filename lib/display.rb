@@ -14,6 +14,7 @@ class Display
 
   def welcome
       puts "Hi! Welcome to the Steam Clearance CLI!"
+      puts ''
   end
 
   def selection
@@ -24,6 +25,8 @@ class Display
     puts "4 : Indie"
     puts "5 : Adventure"
     puts "6 : Action"
+    puts "q : Exit"
+    puts ''
   end
 
   def logic
@@ -64,6 +67,7 @@ class Display
         description
       elsif input == "q"
         puts "Bye for now!"
+        puts ""
         boogie_woogie = false
       else
         puts "That's not an option."
@@ -103,6 +107,7 @@ class Display
         more_info(input.to_i - 1)
       elsif input == "q"
         puts "Bye for now!"
+        puts ""
         boogie_woogie = false
         Game.destroy
         selection
@@ -174,6 +179,8 @@ class Display
       puts ""
       epoc += 1
     end
+    puts "q : Exit"
+    puts ''
   end
 
   def genral
