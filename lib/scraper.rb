@@ -54,38 +54,21 @@ class Scraper
        Game.new(title1, origional_price1, percent_off1, discounted_price1, snip_bit1, game_review1, developer1, des1, min_req1, rec_req1)
      epoc += 1
    end
+   Scraper.destroy
   end
 
   def all
-     @@all[3]
+     @@all
   end
 
   def deep_dive_scraper(epoch)
     new_url = @doc.css("a.search_result_row")[epoch]["href"] # getting the link
     html = open(new_url)
     @doc2_deep_info = Nokogiri::HTML(open(html))
-
-    # snip_bit = @doc2_deep_info.css("div.game_description_snippet").text.strip #snip_bit
-    # game_review = @doc2_deep_info.css("span.game_review_summary")[0].text #game review
-    # developer = @doc2_deep_info.css("div.dev_row")[0].text.strip.split(',')[0].split[1] #dev team
-    # des = @doc2_deep_info.css("div.game_area_description").text #game discription
-    # min_req = @doc2_deep_info.css("div.game_area_sys_req_leftCol").text.strip #minimum Req
-    # rec_req = @doc2_deep_info.css("div.game_area_sys_req_rightCol").text.strip #reccomended Req
-
-    #puts snip_bit
-    #puts game_review
-    #puts developer
-    #puts des
-    #min_req
-    #rec_req
   end
 
-  def dev_finder
-    new_url = @doc.css("a.search_result_row")[4]["href"] # getting the link
-    html = open(new_url)
-    @doc2_deep_info = Nokogiri::HTML(open(html))
-
-    puts @doc2_deep_info.css("div.subtitle.column")
+  def self.destroy
+    @@all = {}
   end
 
 end
