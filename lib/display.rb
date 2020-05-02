@@ -36,6 +36,7 @@ class Display
         self.output1(input)
         genral
         loopy
+        description
       elsif input == '2'
         self.output1(input)
         casual
@@ -62,6 +63,37 @@ class Display
       else
         puts "That's not an option."
         selection
+      end
+
+    end
+  end
+
+  def description
+    boogie_woogie = true
+
+    puts "What would you like more information about?"
+
+    while boogie_woogie == true
+      input = gets.chomp
+
+      if input == '1'
+        puts "info about #{input}"
+      elsif input == '2'
+        puts "info about #{input}"
+      elsif input == '3'
+        puts "info about #{input}"
+      elsif input == '4'
+        puts "info about #{input}"
+      elsif input == '5'
+        puts "info about #{input}"
+      elsif input == '6'
+        puts "info about #{input}"
+      elsif input == "q"
+        puts "Bye for now!"
+        boogie_woogie = false
+        selection
+      else
+        puts "That's not an option."
       end
 
     end
