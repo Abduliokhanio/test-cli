@@ -77,7 +77,7 @@ class Display
       input = gets.chomp
 
       if input == '1'
-        puts "info about #{input}"
+        more_info
       elsif input == '2'
         puts "info about #{input}"
       elsif input == '3'
@@ -122,6 +122,29 @@ class Display
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 
+  end
+
+  def self.more_info
+    puts '                              Snip Bit'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts Game.all[0].snip_bit
+    puts ''
+    puts '                              Game Review'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts Game.all[0].game_review
+    puts ''
+    puts '                              Description'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts Game.all[0].des
+    puts ''
+    puts '                              Minimum Requirement'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts Game.all[0].min_req
+    puts ''
+    puts '                              Reccomended Requirement'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts Game.all[0].rec_req
+    puts ''
   end
 
   def loopy
@@ -176,4 +199,5 @@ end
 uno = Display.new
 uno.welcome
 uno.selection
-uno.logic
+#uno.logic
+Display.more_info
