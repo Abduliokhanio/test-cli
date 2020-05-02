@@ -262,7 +262,7 @@ class Display
   def self.run
     welcome
     selection
-    logic #rescue puts "Sorry, client server did not accept request. Please try again."
+    logic rescue puts "Sorry, client server did not accept request. Please try again."
 
   end 
 
