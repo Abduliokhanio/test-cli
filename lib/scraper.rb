@@ -57,7 +57,7 @@ class Scraper
   end
 
   def all
-    puts @@all
+    puts @@all[3]
   end
 
   def deep_dive_scraper(epoch)
@@ -99,10 +99,10 @@ action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
 genral = Scraper.new(general_url)
 genral.collecter
+genral.all
 
-
-Game.all.each do |val|
-  puts val.title
-  puts val.developer
-  puts ''
-end
+# Game.all.each do |val|
+#   puts val.title
+#   puts val.rec_req
+#   puts ''
+# end
