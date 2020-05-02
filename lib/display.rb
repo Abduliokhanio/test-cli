@@ -66,6 +66,7 @@ class Display
         loopy
         description
       elsif input == "q"
+        puts ""
         puts "Bye for now!"
         puts ""
         boogie_woogie = false
@@ -106,6 +107,7 @@ class Display
       elsif input == '10'
         more_info(input.to_i - 1)
       elsif input == "q"
+        puts ""
         puts "Bye for now!"
         puts ""
         boogie_woogie = false
