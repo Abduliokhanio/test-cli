@@ -187,22 +187,37 @@ class Display
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     puts '                              Snip Bit'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].snip_bit == "" 
+      Game.all[num].snip_bit = "Snip Bit Not Listed"
+    end
     puts Game.all[num].snip_bit
     puts ''
     puts '                              Game Review'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].game_review == "" 
+      Game.all[num].game_review = "Game Review Not Listed"
+    end
     puts Game.all[num].game_review
     puts ''
     puts '                              Description'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].des == "" 
+      Game.all[num].des = "Description Not Listed"
+    end
     puts Game.all[num].des
     puts ''
-    puts '                              Minimum Requirement'
+    puts '                        Minimum System Requirement'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].min_req == "" 
+      Game.all[num].min_req = "Minimum System Requirement Not Listed"
+    end
     puts Game.all[num].min_req
     puts ''
-    puts '                              Reccomended Requirement'
+    puts '                         Maximum System Requirement'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].rec_req == "" 
+      Game.all[num].rec_req = "Maximum System Requirement Not Listed"
+    end
     puts Game.all[num].rec_req
     puts ''
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
@@ -265,6 +280,7 @@ class Display
     logic rescue puts "Sorry, client server did not accept request. Please try again."
 
   end 
+
 
 end
 
