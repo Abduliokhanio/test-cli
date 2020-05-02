@@ -12,12 +12,12 @@ class Display
   def initialize
   end
 
-  def welcome
+  def self.welcome
       puts "Hi! Welcome to the Steam Clearance CLI!"
       puts ''
   end
 
-  def selection
+  def self.selection
     puts "Please select the genre you would like to explore:"
     puts "1 : General"
     puts "2 : Casual"
@@ -29,11 +29,11 @@ class Display
     puts ''
   end
 
-  def selection2
+  def self.selection2
     puts "What would you like more information about?"
   end
 
-  def logic
+  def self.logic
     boogie_woogie = true
 
     while boogie_woogie == true
@@ -82,7 +82,7 @@ class Display
     end
   end
 
-  def description
+  def self.description
     boogie_woogie = true
 
     selection2
@@ -154,7 +154,7 @@ class Display
     end
   end
 
-  def output1(val)
+  def self.output1(val)
     if val == '1'
       sit = 'Genral'
     elsif val == '2'
@@ -179,7 +179,7 @@ class Display
 
   end
 
-  def more_info(num)
+  def self.more_info(num)
     puts ""
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
@@ -212,7 +212,7 @@ class Display
 
   end
 
-  def loopy
+  def self.loopy
     epoc = 0
     while epoc < 10
 
@@ -229,41 +229,51 @@ class Display
     puts ''
   end
 
-  def genral
+  def self.genral
     genral = Scraper.new(@@general_url)
     genral.collecter
   end
 
-  def casual
+  def self.casual
     casual = Scraper.new(@@casual_url)
     casual.collecter
   end
 
-  def simulation
+  def self.simulation
     simulation = Scraper.new(@@simulation_url)
     simulation.collecter
   end
 
-  def indie
+  def self.indie
     indie = Scraper.new(@@indie_url)
     indie.collecter
   end
 
-  def adventure
+  def self.adventure
     adventure = Scraper.new(@@adventure_url)
     adventure.collecter
   end
 
-  def action
+  def self.action
     action = Scraper.new(@@action_url)
     action.collecter
   end
 
+  def self.run
+    welcome
+    selection
+    logic #rescue puts "Sorry, client server did not accept request. Please try again."
+
+  end 
+
 end
 
+Display.run
 
-uno = Display.new
-uno.welcome
-uno.selection
-uno.logic rescue puts "Sorry, client server did not accept request. Please try again."
+
+# uno = Display.new
+# uno.welcome
+# uno.selection
+# uno.logic rescue puts "Sorry, client server did not accept request. Please try again."
 #Display.more_info(0)
+
