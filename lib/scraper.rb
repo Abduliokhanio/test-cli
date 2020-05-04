@@ -59,13 +59,13 @@ class Scraper
      @@all
   end
 
-  def deep_dive_scraper(epoch)
+  def deep_dive_scraper(epoch) #Helps dive deeper to get particular information snip-bit -> rec_requirements
     new_url = @doc.css("a.search_result_row")[epoch]["href"] # getting the link
     html = open(new_url)
     @doc2_deep_info = Nokogiri::HTML(open(html))
   end
 
-  def self.destroy
+  def self.destroy #Whipes data to speed up program during execution
     @@all = {}
   end
 

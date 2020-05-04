@@ -2,6 +2,7 @@ require_relative "scraper.rb"
 
 class Display
 
+#Just a list of the URLS
   @@general_url = "https://store.steampowered.com/search/?specials=1"
   @@casual_url = "https://store.steampowered.com/search/?specials=1&tags=597"
   @@simulation_url = "https://store.steampowered.com/search/?specials=1&tags=599"
@@ -33,7 +34,7 @@ class Display
     puts "What would you like more information about?"
   end
 
-  def self.logic
+  def self.logic #Main Logic : Allows the user to pick a genre/ Allow users to retrive more info on a game
     boogie_woogie = true
 
     while boogie_woogie == true
@@ -82,7 +83,7 @@ class Display
     end
   end
 
-  def self.description
+  def self.description # allows users to recieve more information on a game
     boogie_woogie = true
 
     selection2
@@ -227,7 +228,7 @@ class Display
 
   end
 
-  def self.loopy
+  def self.loopy #handles the top 10 display loop
     epoc = 0
     while epoc < 10
 
@@ -244,6 +245,7 @@ class Display
     puts ''
   end
 
+  #These are the scraper functions
   def self.genral
     genral = Scraper.new(@@general_url)
     genral.collecter
@@ -274,13 +276,13 @@ class Display
     action.collecter
   end
 
-  def self.run
+  def self.run #allows the program to be run through 1 command / Handles any Steam Server request errors
     welcome
     selection
     logic rescue connection_fail
   end 
 
-  def self.connection_fail
+  def self.connection_fail #Displays the try again message
     puts ''
     puts "Sorry, steam server did not accept the request. Please try again."
     puts ''

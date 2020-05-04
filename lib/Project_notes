@@ -5,7 +5,7 @@
 # adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
 # action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
-Project BluePrint
+Project Psudo-Code BluePrint
     1) Ask for user input for genre?
     2) Display Top 10 games in that genre.
     3) Ask user if he wants more information on a particular game?
@@ -18,3 +18,15 @@ Project BluePrint
 
 Project Back-End
 
+    Functionality
+        The app is supposed to take information from the Steam Clearance section and display that information to the user
+        based on what the user is looking for. 
+
+        It'll ask the user what Genre they want to look into and provide a top 10 list of games for that genre.
+        It'll allow the user to dive deeper and collecet more information on the games they are interested in based on the list they chose.
+
+    Information FLow
+        Website -> Scraper.rb -> Game.rb -> Display.rb -> User
+
+    Website 
+        We are using the Steam Clearance selection
