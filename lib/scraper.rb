@@ -4,7 +4,7 @@ require_relative "game.rb"
 
 class Scraper
 
-  attr_accessor :doc,:doc2_deep_info, :title, :original_price, :percent_off, :discounted_price
+  attr_accessor :doc,:doc2_deep_info
 
   @@all = {}
 
