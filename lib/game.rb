@@ -6,6 +6,7 @@ class Game
   @@count = 0
   def initialize(title, original_price, percent_off, discounted_price, snip_bit, game_review, developer, des, min_req, rec_req)
 
+    #mass assingment
     @title = title
     @original_price = original_price
     @percent_off = percent_off
