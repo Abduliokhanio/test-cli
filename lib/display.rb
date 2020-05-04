@@ -290,5 +290,3 @@ class Display
   end 
 
 end
-
-Display.run
