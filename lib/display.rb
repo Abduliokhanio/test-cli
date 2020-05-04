@@ -204,6 +204,13 @@ class Display
     end
     puts Game.all[num].des
     puts ''
+    puts '                              Developer'
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    if Game.all[num].developer == "" 
+      Game.all[num].developer = "Developer Not Listed"
+    end
+    puts Game.all[num].developer
+    puts ''
     puts '                        Minimum System Requirement'
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
     if Game.all[num].min_req == "" 
