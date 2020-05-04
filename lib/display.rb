@@ -10,9 +10,6 @@ class Display
   @@adventure_url = "https://store.steampowered.com/search/?specials=1&tags=21"
   @@action_url = "https://store.steampowered.com/search/?specials=1&tags=19"
 
-  def initialize
-  end
-
   def self.welcome
       puts "Hi! Welcome to the Steam Clearance CLI!"
       puts ''
