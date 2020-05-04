@@ -4,8 +4,6 @@ require_relative "game.rb"
 
 class Scraper
 
-  attr_accessor :doc,:doc2_deep_info
-
   @@all = {}
 
   def initialize(url)
