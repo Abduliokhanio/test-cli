@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require_relative "game.rb"
+require_relative "game"
 
 class Scraper
 
@@ -38,7 +38,7 @@ class Scraper
    epoc = 0
    while epoc < 10
        title = @@all[epoc][0]
-       origional_price = @@all[epoc][1]
+       original_price = @@all[epoc][1]
        discounted_price = @@all[epoc][2]
        percent_off = @@all[epoc][3]
        snip_bit = @@all[epoc][4]
@@ -47,8 +47,8 @@ class Scraper
        des= @@all[epoc][7]
        min_req= @@all[epoc][8]
        rec_req= @@all[epoc][9]
-
-       game_arr = [title, origional_price, percent_off, discounted_price, snip_bit, game_review, developer, des, min_req, rec_req]
+       
+       game_arr = {:title => title, :original_price => original_price, :percent_off => percent_off, :discounted_price => discounted_price, :snip_bit => snip_bit, :game_review => game_review, :developer => developer, :des => des, :min_req => min_req, :rec_req => rec_req}
 
        Game.new(game_arr)
      epoc += 1

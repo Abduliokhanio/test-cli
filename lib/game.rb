@@ -7,17 +7,7 @@ class Game
   @@all = []
   def initialize(game_array)
 
-    #mass assingment
-    @title = game_array[0]
-    @original_price = game_array[1]
-    @percent_off = game_array[2]
-    @discounted_price = game_array[3]
-    @snip_bit =  game_array[4]
-    @game_review = game_array[5]
-    @developer = game_array[6]
-    @des =  game_array[7]
-    @min_req =  game_array[8]
-    @rec_req = game_array[9]
+    game_array.each {|key, value| self.send(("#{key}="),(value))}
 
     @@all << self
   end

@@ -1,4 +1,4 @@
-require_relative "scraper.rb"
+require_relative "scraper"
 
 class Display
 
@@ -283,7 +283,7 @@ class Display
   def self.run #allows the program to be run through 1 command / Handles any Steam Server request errors
     welcome
     selection
-    logic rescue connection_fail
+    logic #rescue connection_fail
   end 
 
   def self.connection_fail #Displays the try again message
