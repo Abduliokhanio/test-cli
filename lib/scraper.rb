@@ -37,18 +37,18 @@ class Scraper
   def creator # creates games
    epoc = 0
    while epoc < 10
-       title1 = @@all[epoc][0]
-       origional_price1 = @@all[epoc][1]
-       discounted_price1 = @@all[epoc][2]
-       percent_off1 = @@all[epoc][3]
-       snip_bit1 = @@all[epoc][4]
-       game_review1 = @@all[epoc][5]
-       developer1= @@all[epoc][6]
-       des1= @@all[epoc][7]
-       min_req1= @@all[epoc][8]
-       rec_req1= @@all[epoc][9]
+       title = @@all[epoc][0]
+       origional_price = @@all[epoc][1]
+       discounted_price = @@all[epoc][2]
+       percent_off = @@all[epoc][3]
+       snip_bit = @@all[epoc][4]
+       game_review = @@all[epoc][5]
+       developer= @@all[epoc][6]
+       des= @@all[epoc][7]
+       min_req= @@all[epoc][8]
+       rec_req= @@all[epoc][9]
 
-       game_arr = [title1, origional_price1, percent_off1, discounted_price1, snip_bit1, game_review1, developer1, des1, min_req1, rec_req1]
+       game_arr = [title, origional_price, percent_off, discounted_price, snip_bit, game_review, developer, des, min_req, rec_req]
 
        Game.new(game_arr)
      epoc += 1
