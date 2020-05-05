@@ -22,8 +22,8 @@ Project Back-End
         The app is supposed to take information from the Steam Clearance section and display that information to the user
         based on what the user is looking for. 
 
-        It'll ask the user what Genre they want to look into and provide a top 10 list of games for that genre.
-        It'll allow the user to dive deeper and collecet more information on the games they are interested in based on the list they chose.
+        > It'll ask the user what Genre they want to look into and provide a top 10 list of games for that genre.
+        > It'll allow the user to dive deeper and collecet more information on the games they are interested in based on the list they chose.
 
     Information FLow
         Website -> Scraper.rb -> Game.rb -> Display.rb -> User
@@ -31,3 +31,102 @@ Project Back-End
     Website 
         We are using the Steam Clearance selection
         
+Building the Project
+
+    The Ordinary World
+        For the last couple of weeks due to the pandemic my life consisted of waking up, coding and sleeping,
+
+    The Call To Adventure
+        Something happens to upset the normal life of the hero, which often includes an invitation or pressure to leave their normal life behind.
+        Luke buys a droid that plays a holographic distress call from Princess Leia and a plea for rescue. 
+
+        But this particular Monday morning was different. We had discovered it was "CLI Project Week". It was the week we had all been preparing for 
+        the last 2 months. And I still didnt have any Idea what My project was going to be about.
+
+    Refusal Of The Call
+        The hero resists, or tries to resist the inevitable.
+        Luke clings to his commitment to his uncle and the farm. 
+
+        At first I was planning on doing something easy. Something that required little effort. The original idea was that I'd build a web Scraper
+        that used an api to list the Starbuck menu items.
+
+    Meeting With The Mentor
+        A wise person helps put things into perspective, encouraging the hero to accept the call to adventure.
+        Enter Ben Kenobi. 
+
+        Upon doing research to figure out how to use an API in my notes as well as checking on youtube. With the perifieril of my eye. I saw an interesting video thumbnail on the right 
+        scroll in my youtube reccomandations. 
+        By a youtuber named "carykh" with a vieo titled "Computer evolves to generate baroque music!"
+        https://www.youtube.com/watch?v=SacogDL_4JU
+        Through out the video "carykh" build an AI from scratch. And the video is about his multiple filures along the way and how much he 
+        grew as a programmer towards the completion of the project.
+
+    Crossing The Threshold
+        The hero accepts the call to adventure, which propels them past the point of no return.
+        The Lars Homestead is burned the ground and Luke leaves with Ben Kenobi. 
+
+        The video lit a fire with in me. If "carykh" can build an AI from scratch with little to no experience. What stopping me from aiming 
+        higher? It was then I decided that I wanted to build something of value. Somthing that other people would find useful in their lives.
+        Not sure why. But the idea of building a project that listed the top 10 games on sale per genre from the steam library seemed like it would be 
+        fun and enriching. And even more; it should be done in a week.
+
+    Tests, Allies, And Enemies
+        The hero’s resolve is tested and they meet friends and foes along the way.
+        Luke and Ben are hunted by Stormtroopers and meet Han and Chewie. 
+
+        Upon starting the project I googled the Steam Api to see if thery even had one. And lo and behold they did at least according to steam. 
+        At first glace accoriding to a PDF file found on their website it seemed complicated and clunky to use. I became quickly overwelmed. What is a token? Why do I need it to
+        access a Json file/Json data? And why is there no link for the API? I reached out to my friend Aurel who also just so happend to be doing a CLI project as well. One we were done 
+        exchanging plesantries. I told him about my project and what its intended functionality was. And watching his eyes light up when I told him
+        he would be able to get a list of the most popular games on sale whenever he wanted set off a flame of motivation in my chest. 
+
+    The Approach
+        The hero is trained or prepared for the mission they have accepted.
+        Luke is trained in the ways of the force by Ben Kenobi and receives his first light sabre.
+
+        The following day I opened up a "tinker.rb" file on my IDE and spent the whole day tinkering. Through trial and error I discovered that if I use "nokogiri" and
+        "open-uri" I wouldn't have to use the steam API (which I could not actually find anyways). There I see the bridge to my success.
+        I had access to all the data I needed to build a top 10 list.
+
+    The Ordeal (The Cave)
+        The hero is tested and often comes to their lowest point in the story.
+        Luke and his friends are taken captive in the Death Star and nearly die in the trash compactor.
+
+        That victory was short lived. After 2 whole days of coding. I discovered my actual programming file was corrupted. All my work was lost.
+        And I only had 4 days left. Luckly I had remmebered the Algorythim for the most part and spent the entire day recreating it. But I still
+        had to make an object to store the data, an object to display the data and figure out how to run the files with one command with an entire
+        days worth of work lost. 
+
+    The Reward
+        The hero begins to rise with a victory in the bag.
+        Luke and friends escape the Death Star with Princess Leia and just as critical, information about how to destroy the Death Star.
+
+        With my newly rekindled flame of mitivation I set off to continue my journey. The same night I stayed up to 2am and I finished the 
+        object meant to store my data. With an actual victory in the bag I decided to upload the project immidiatly to my git hub repository to 
+        avoid any other setbacks.
+
+    The Road Back
+        The hero is forced to finish what they started by renewed opposition from the enemy.
+        Darth Vader and the Death Star zero in on the Rebel Base, forcing the Rebels to launch an all-out assault on the Death Star.
+
+        Three days left. I had to figure out how to display the objects based on user preferance. I opened up a "display.rb" file and went to work.
+        The easy part was the 'puts' statement displaying the data. But how do I display data based on user prefereance? And how do I keep it going
+        perminantly? After a couple hours on stack over flow I had realized that I needed a method that handled the logic. And after a brief
+        revist of the 'trash.rb' file I had my 'logic' function up and running. Great now I can display the top 10 games on sale per genre from steam.
+
+
+    The Resurrection
+        The hero is tested again and nearly dies, but in such a way that they rise stronger than ever.
+        Luke hears Ben Kenobi’s voice, uses the force, and delivers the death blow to the Death Star.
+
+        Feels great to be done. But wait. I just realized I still need a way to dislplay information about the indiviudal games in my list.
+        I need a way for my users to decide what genre they want to see a top 10 list for and what game they want to learn more about[description, developers, game reviews].
+        No problem. Let me just check the website where I found the data for my top 10 list. Oh wait!!! That information isnt listed on the same webpage!
+        Its listed on the indiviudal webpages for the game.
+
+        I was about to quit and find an easier poject. When I saw another "carykh" thumbnail on youtube while procrastinating.
+        I had remmebered why I set off on this quest.
+
+    Return With The Elixir
+        The hero returns home but life will never be the same.
+        Luke is a hero but his training has just begun. 
