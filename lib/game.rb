@@ -1,6 +1,8 @@
 class Game
 
-  attr_accessor :title, :original_price, :percent_off, :discounted_price, :snip_bit, :game_review, :developer, :des, :min_req, :rec_req
+  attr_accessor :title, :original_price, :percent_off, 
+                :discounted_price, :snip_bit, :game_review, 
+                :developer, :des, :min_req, :rec_req
 
   @@all = []
   def initialize(title, original_price, percent_off, discounted_price, snip_bit, game_review, developer, des, min_req, rec_req)

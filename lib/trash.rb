@@ -1,16 +1,26 @@
+title = 'gta'
+original_price = '$30'
+percent_off = '50% OFF'
+dev = 'rstar'
+array1 = [title, original_price, percent_off,dev]
+
 class Game
 
-    attr_accessor :title, :original_price, :percent_off
+    attr_accessor :title, 
+                  :original_price, 
+                  :percent_off,
+                  :dev
   
     @@all = []
-    def initialize(title, original_price, percent_off)
+    def initialize(array)
+
+        accessor_array = [@title,@original_price,@percent_off,@dev]
   
       #mass assingment
-      @title = title
-      @original_price = original_price
-      @percent_off = percent_off
-
-      attr_accessor(:dev)
+      @title = array[0]
+      accessor_array[1] = array[1]
+      accessor_array[2] = array[2]
+      accessor_array[3] = array[3]
   
       @@all << self
     end
@@ -26,10 +36,9 @@ class Game
 end
 
 
-gta = Game.new('gta', '$12', '50% OFF')
+gta = Game.new(array1)
 
 puts gta.title
 puts gta.original_price
 puts gta.percent_off
-gta.dev = 'rockstar'
 puts gta.dev
