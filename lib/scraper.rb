@@ -47,7 +47,10 @@ class Scraper
        des1= @@all[epoc][7]
        min_req1= @@all[epoc][8]
        rec_req1= @@all[epoc][9]
-       Game.new(title1, origional_price1, percent_off1, discounted_price1, snip_bit1, game_review1, developer1, des1, min_req1, rec_req1)
+
+       game_arr = [title1, origional_price1, percent_off1, discounted_price1, snip_bit1, game_review1, developer1, des1, min_req1, rec_req1]
+
+       Game.new(game_arr)
      epoc += 1
    end
    Scraper.destroy

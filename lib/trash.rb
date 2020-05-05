@@ -14,13 +14,13 @@ class Game
     @@all = []
     def initialize(array)
 
-        accessor_array = [@title,@original_price,@percent_off,@dev]
+        #accessor_array = [@title,@original_price,@percent_off,@dev]
   
       #mass assingment
       @title = array[0]
-      accessor_array[1] = array[1]
-      accessor_array[2] = array[2]
-      accessor_array[3] = array[3]
+      @original_price = array[1]
+      @percent_off = array[2]
+      @dev = array[3]
   
       @@all << self
     end
