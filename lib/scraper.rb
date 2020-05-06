@@ -6,12 +6,9 @@ class Scraper
 
   @@all = {}
 
-  def initialize(url)
+  def self.collecter(url) # collects games + data
     html = open(url)
     @doc = Nokogiri::HTML(open(html))
-  end
-
-  def collecter # collects games + data
 
     epoc = 0
     while epoc < 10
@@ -34,7 +31,7 @@ class Scraper
     creator
   end
 
-  def creator # creates games
+  def self.creator # creates games
    epoc = 0
    while epoc < 10
        title = @@all[epoc][0]
@@ -56,7 +53,7 @@ class Scraper
    Scraper.destroy
   end
 
-  def deep_dive_scraper(epoch) #Helps dive deeper to get particular information snip-bit -> rec_requirements
+  def self.deep_dive_scraper(epoch) #Helps dive deeper to get particular information snip-bit -> rec_requirements
     new_url = @doc.css("a.search_result_row")[epoch]["href"] # getting the link
     html = open(new_url)
     @doc2_deep_info = Nokogiri::HTML(open(html))

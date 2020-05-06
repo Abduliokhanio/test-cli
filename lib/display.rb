@@ -251,39 +251,33 @@ class Display
 
   #These are the scraper functions
   def self.genral
-    genral = Scraper.new(@@general_url)
-    genral.collecter
+    Scraper.collecter(@@general_url)
   end
 
   def self.casual
-    casual = Scraper.new(@@casual_url)
-    casual.collecter
+    Scraper.collecter(@@casual_url)
   end
 
   def self.simulation
-    simulation = Scraper.new(@@simulation_url)
-    simulation.collecter
+    Scraper.collecter(@@simulation_url)
   end
 
   def self.indie
-    indie = Scraper.new(@@indie_url)
-    indie.collecter
+    Scraper.collecter(@@indie_url)
   end
 
   def self.adventure
-    adventure = Scraper.new(@@adventure_url)
-    adventure.collecter
+    Scraper.collecter(@@adventure_url)
   end
 
   def self.action
-    action = Scraper.new(@@action_url)
-    action.collecter
+    Scraper.collecter(@@action_url)
   end
 
   def self.run #allows the program to be run through 1 command / Handles any Steam Server request errors
     welcome
     selection
-    logic rescue connection_fail
+    logic #rescue connection_fail
   end 
 
   def self.connection_fail #Displays the try again message
